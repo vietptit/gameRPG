@@ -7,15 +7,20 @@ public class instantiate : MonoBehaviour
     [SerializeField] GameObject skeleton;
 
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-       
-            StartCoroutine(product());
+        
+        StartCoroutine(product());
     }
 
     IEnumerator product()
     {
-        Instantiate(skeleton, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(2f);
+        while (true)
+        {
+                    Instantiate(skeleton, transform.position, Quaternion.identity);
+                    yield return new WaitForSecondsRealtime(2f);
+        }
+
+
     }
 }
