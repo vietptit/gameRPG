@@ -1670,7 +1670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1648fcaed42554a89ee37cf6074ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heath: 500
+  heath: 1000
   dame: 50
   groundCheck: {fileID: 362085229}
   groundCheckDistance: 1.21

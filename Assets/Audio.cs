@@ -31,7 +31,7 @@ public class Audio : MonoBehaviour
     [Range(0f, 1f)]
     public float takingmusicBoss = 1f;
 
-    public AudioClip musicVictory;
+    public AudioClip musicVictory; // bo di
     [Range(0f, 1f)]
     public float takingmusicVictory = 1f;
 
