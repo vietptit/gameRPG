@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "RPGgame.sln"
+    "dotnet.defaultSolution": "gameRPG.sln"
 }

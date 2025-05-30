@@ -12,6 +12,7 @@ public class DieState : playerState
     public override void Enter()
     {
         base.Enter();
+        _player.checkDie = true;
         stateTimer = 3f;
     }
 
@@ -19,8 +20,11 @@ public class DieState : playerState
     public override void Update()
     {
         base.Update();
+      
+        Debug.Log(stateTimer);
+        
         if (stateTimer < 0)
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("SampleScene");
     }
 
 

@@ -82,7 +82,7 @@ public class Entity : MonoBehaviour
         Flip(x);
     }
 
-
+    
     public virtual void OnDrawGizmos()
     {
         Gizmos.DrawLine(groundCheck.position,new Vector3(groundCheck.position.x,groundCheck.position.y-groundCheckDistance));
@@ -99,6 +99,7 @@ public class Entity : MonoBehaviour
     public virtual void damage()
     {
         Debug.Log("dame dame");
+        Audio.instance.OnPlayTakeDame();
         _fx.StartCoroutine("FlashFX");
 
     }

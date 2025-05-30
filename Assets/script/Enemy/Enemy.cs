@@ -48,6 +48,8 @@ public class Enemy : Entity
 
     override protected void Update()
     {
+        if (manager.instance.checkEndGame)
+            heath -= 1000;
         base.Update();
         stateMachine.currentState.Update();
 
@@ -115,7 +117,7 @@ public class Enemy : Entity
     public virtual void Die()
     {
         FreezeTimer(false);
-
+        
         gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
         moveSpeed = 0;
         stateMachine.End();

@@ -11,6 +11,7 @@ public class JumbState : playerState
     public override void Enter()
     {
         base.Enter();
+        Audio.instance.OnPlayerDash();
         _player.Setvelocity(rb.velocity.x,_player.jumbForce);
     }
 

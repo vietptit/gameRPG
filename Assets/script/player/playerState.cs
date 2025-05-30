@@ -23,6 +23,7 @@ public class playerState
     protected string anim;
 
     protected Rigidbody2D rb;
+    // protected bool checkDie=false;
 
     protected float stateTimer;
 
@@ -50,18 +51,21 @@ public class playerState
 
     public virtual void Update()
     {
-
-        xInput = Input.GetAxisRaw("Horizontal");
-        yInput = Input.GetAxisRaw("Vertical");
-        _player.myAnim.SetFloat("yVelocity", rb.velocity.y);
         stateTimer -= Time.deltaTime;
+        if (!_player.checkDie)
+        {
+            xInput = Input.GetAxisRaw("Horizontal");
+            yInput = Input.GetAxisRaw("Vertical");
+            _player.myAnim.SetFloat("yVelocity", rb.velocity.y);
+            
 
-        _player.checkForDash();
+            _player.checkForDash();
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-            stateMachine.changeState(_player.attackState);
-        if (_player.heath < 0)
-            stateMachine.changeState(_player.dieState);
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+                stateMachine.changeState(_player.attackState);
+            if (_player.heath < 0)
+                stateMachine.changeState(_player.dieState);
+        }
     }
 
     public void finishAttack()

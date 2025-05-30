@@ -30,4 +30,9 @@ public class FishnishAttack : MonoBehaviour
     {
         SkillManager.instance.throwSkill.CreateSword();
     }
+
+    public void hitMusic()
+    {
+        Audio.instance.OnPlayAudioHit();
+    }
 }

@@ -11,7 +11,8 @@ public class DashState : playerState
     public override void Enter()
     {
         base.Enter();
-        stateTimer=_player.dashDuration;
+        Audio.instance.OnPlayerDash();
+        stateTimer =_player.dashDuration;
         SkillManager.instance.clone.createClone(_player.transform);
        
     }
