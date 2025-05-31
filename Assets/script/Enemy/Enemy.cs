@@ -79,7 +79,7 @@ public class Enemy : Entity
     public virtual void openCounterAttackWindow()
     {
         canbeStun = true;
-        counterImage.SetActive(true);
+        counterImage.SetActive(false);
     }
 
     public virtual void closeCounterAttackWindow()
