@@ -6,23 +6,24 @@ public class instantiate : MonoBehaviour
 {
     [SerializeField] GameObject skeleton;
 
-    void Start()
+        void Start()
     {
-        
-        
-            StartCoroutine(product());
+
        
+            StartCoroutine(product());
+
             
     }
 
     
     IEnumerator product()
-    {
+{
         while (true)
-        {
-                    Instantiate(skeleton, transform.position, Quaternion.identity);
-                    yield return new WaitForSeconds(2f);
-        }
+    {
+        Instantiate(skeleton, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2f);
+}
 
     }
 }
+

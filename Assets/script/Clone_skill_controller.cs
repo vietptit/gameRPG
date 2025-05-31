@@ -44,6 +44,7 @@ public class Clone_skill_controller : MonoBehaviour
         cloneTimer = .1f;
     }
 
+
     public void attackTrigger()
     {
         Collider2D[] collider = Physics2D.OverlapCircleAll(attackCheck.transform.position, attackCheckRadius);
@@ -57,7 +58,7 @@ public class Clone_skill_controller : MonoBehaviour
             }
         }
     }
-    
+
 
     public void FaceClosestTarget()
     {
@@ -84,5 +85,11 @@ public class Clone_skill_controller : MonoBehaviour
             if (transform.position.x > closestEnemy.position.x)
                 transform.Rotate(0, 180, 0);
         }
+    }
+    
+
+    public void hitMusic()
+    {
+        Audio.instance.OnPlayAudioHit();
     }
 }
