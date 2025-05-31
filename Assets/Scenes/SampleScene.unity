@@ -4145,7 +4145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSize: 300
-  speed: 2
+  speed: 1.4
   boss: {fileID: 2081023742}
   boss2: {fileID: 1037198840}
   product: {fileID: 1673500680}

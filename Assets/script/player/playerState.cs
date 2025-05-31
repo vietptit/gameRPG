@@ -61,8 +61,8 @@ public class playerState
 
             _player.checkForDash();
 
-            if (Input.GetKeyDown(KeyCode.Mouse1))
-                stateMachine.changeState(_player.attackState);
+            // if (Input.GetKeyDown(KeyCode.Mouse1))
+            //     stateMachine.changeState(_player.attackState);
             if (_player.heath < 0)
                 stateMachine.changeState(_player.dieState);
         }

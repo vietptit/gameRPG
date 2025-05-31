@@ -22,7 +22,8 @@ public class GroundState : playerState
     public override void Update()
     {
         base.Update();
-
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+                stateMachine.changeState(_player.attackState);
         if (Input.GetKeyDown(KeyCode.Mouse0))
             stateMachine.changeState(_player.throwState);
 

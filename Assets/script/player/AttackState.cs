@@ -11,7 +11,10 @@ public class AttackState : playerState
     public override void Enter()
     {
         base.Enter();
-        attackCheck=false;
+        // xInput = Input.GetAxisRaw("Horizontal");
+        // yInput = Input.GetAxisRaw("Vertical");
+        //     _player.myAnim.SetFloat("yVelocity", rb.velocity.y);
+        attackCheck =false;
         if(combo>2||Time.time>timeReal+timeBettewnCombo)
         {
             combo=0;
