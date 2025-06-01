@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Audio : MonoBehaviour
 {
@@ -42,7 +43,10 @@ public class Audio : MonoBehaviour
     void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         else
             Destroy(gameObject);
 
@@ -73,6 +77,31 @@ public class Audio : MonoBehaviour
     public void OnPlayAudioHit() => OnPlayClip(hit, takingHitVolume);
 
     public void OnPlayTakeDame() => OnPlayClip(takeDame, takingDamageVolume);
-    
+
     public void OnPlayerDash() => OnPlayClip(playerDash, takingplayerDash);
+    
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        _camera = Camera.main;
+
+        if (_camera != null)
+        {
+            _audio = _camera.GetComponent<AudioSource>();
+
+            if (_audio == null)
+            {
+                _audio = _camera.gameObject.AddComponent<AudioSource>();
+            }
+        }
+}
 }
