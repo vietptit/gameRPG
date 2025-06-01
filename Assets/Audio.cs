@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,12 +10,14 @@ public class Audio : MonoBehaviour
     [SerializeField] Camera _camera;
     AudioSource _audio;
 
+    [Header("Volume Settings")]
+    [Range(0f, 1f)] public float musicVolume = 1f;
+    [Range(0f, 1f)] public float sfxVolume = 1f;
+
     [Header("music")]
     public AudioClip musicBegin;
     [Range(0f, 1f)]
     public float takingMusicBeginVolume = 1f;
-
-
 
     public AudioClip takeDame;
     [Range(0f, 1f)]
@@ -79,7 +79,7 @@ public class Audio : MonoBehaviour
     public void OnPlayTakeDame() => OnPlayClip(takeDame, takingDamageVolume);
 
     public void OnPlayerDash() => OnPlayClip(playerDash, takingplayerDash);
-    
+
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -97,11 +97,29 @@ public class Audio : MonoBehaviour
         if (_camera != null)
         {
             _audio = _camera.GetComponent<AudioSource>();
+            _audio.volume = musicVolume;
 
             if (_audio == null)
             {
                 _audio = _camera.gameObject.AddComponent<AudioSource>();
             }
         }
-}
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        musicVolume = Mathf.Clamp01(volume);
+        if (_audio != null)
+        {
+            _audio.volume = musicVolume;
+        }
+    }
+    public void SetSFXVolume(float volume)
+    {
+        sfxVolume = Mathf.Clamp01(volume);
+        
+        takingDamageVolume = sfxVolume;
+        takingHitVolume = sfxVolume;
+        takingplayerDash = sfxVolume;
+    }
 }

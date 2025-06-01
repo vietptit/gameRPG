@@ -403,6 +403,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 2019310887}
+  musicVolume: 1
+  sfxVolume: 1
   musicBegin: {fileID: 8300000, guid: 43ac4c462281187468bf4e3c3158f879, type: 3}
   takingMusicBeginVolume: 0.22
   takeDame: {fileID: 8300000, guid: 6eb56217257292048810fac8340a226f, type: 3}
@@ -430,6 +432,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &983881001 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5322766542147960800, guid: 2a32a46ffadd41c4287d8e6e5c517d75, type: 3}
+  m_PrefabInstance: {fileID: 4239772492279417890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1516084361 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 426835612644481953, guid: 2a32a46ffadd41c4287d8e6e5c517d75, type: 3}
+  m_PrefabInstance: {fileID: 4239772492279417890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1832778465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 986199601140675044, guid: 2a32a46ffadd41c4287d8e6e5c517d75, type: 3}
+  m_PrefabInstance: {fileID: 4239772492279417890}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1832778467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832778465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aab90db52f2da64fa12543f9e84d6de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSlider: {fileID: 983881001}
+  sfxSlider: {fileID: 1516084361}
 --- !u!1 &2019310885
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +829,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 986199601140675044, guid: 2a32a46ffadd41c4287d8e6e5c517d75, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1832778467}
   m_SourcePrefab: {fileID: 100100000, guid: 2a32a46ffadd41c4287d8e6e5c517d75, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
