@@ -24,7 +24,7 @@ public class DieState : playerState
         Debug.Log(stateTimer);
         
         if (stateTimer < 0)
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("GameOver");
     }
 
 
