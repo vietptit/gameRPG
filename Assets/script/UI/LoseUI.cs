@@ -22,6 +22,8 @@ public class LoseUI : MonoBehaviour
     }
     void Start()
     {
+        Audio.instance.changeMusicDefeat();
+
         Sequence seq = DOTween.Sequence();
         seq.Append(bgImage.DOFade(1f, 1f).SetEase(Ease.InOutQuad));
         seq.Append(loseTitle.DOFade(1f, 1f).SetEase(Ease.InOutQuad));

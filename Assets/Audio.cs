@@ -36,6 +36,10 @@ public class Audio : MonoBehaviour
     [Range(0f, 1f)]
     public float takingmusicVictory = 1f;
 
+    public AudioClip musicDefeat;
+    [Range(0f, 1f)]
+    public float takingmusicDefeat = 1f;
+
     public AudioClip playerDash;
     [Range(0f, 1f)]
     public float takingplayerDash = 1f;
@@ -69,7 +73,7 @@ public class Audio : MonoBehaviour
     public void changeMusicBoss() => ChangeMusic(musicBoss, takingmusicBoss);
     public void changeMusicVictory() => ChangeMusic(musicVictory, takingmusicVictory);
 
-
+    public void changeMusicDefeat() => ChangeMusic(musicDefeat, takingmusicDefeat);
 
 
     void OnPlayClip(AudioClip audio, float volume) => AudioSource.PlayClipAtPoint(audio, Camera.main.transform.position, volume);
