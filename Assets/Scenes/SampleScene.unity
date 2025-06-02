@@ -1670,7 +1670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1648fcaed42554a89ee37cf6074ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heath: 1000
+  heath: 300
   dame: 50
   groundCheck: {fileID: 362085229}
   groundCheckDistance: 1.21
@@ -4145,7 +4145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSize: 300
-  speed: 1.4
+  speed: 0.15
   boss: {fileID: 2081023742}
   boss2: {fileID: 1037198840}
   product: {fileID: 1673500680}
