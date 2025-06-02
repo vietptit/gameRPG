@@ -15,7 +15,7 @@ public class LoseUI : MonoBehaviour
     {
         loseTitle.alpha = 0;
         buttons.alpha = 0;
-        
+
         Color c = bgImage.color;
         c.a = 0f;
         bgImage.color = c;
@@ -38,5 +38,9 @@ public class LoseUI : MonoBehaviour
     {
         Debug.Log("exit");
         SceneManager.LoadScene("Title");
+    }
+    public void PlayBtnSound()
+    {
+        Audio.instance.OnButtonClicked();
     }
 }

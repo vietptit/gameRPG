@@ -22,6 +22,7 @@ public class SettingUI : MonoBehaviour
     }
     private void ShowControlUI()
     {
+        Audio.instance.OnButtonClicked();
         audioUI.SetActive(false);
         controlUI.SetActive(true);
         selected1.SetActive(true);
@@ -29,6 +30,7 @@ public class SettingUI : MonoBehaviour
     }
     private void ShowAudioUI()
     {
+        Audio.instance.OnButtonClicked();
         controlUI.SetActive(false);
         audioUI.SetActive(true);
         selected2.SetActive(true);

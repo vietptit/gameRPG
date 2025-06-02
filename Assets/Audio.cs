@@ -44,6 +44,13 @@ public class Audio : MonoBehaviour
     [Range(0f, 1f)]
     public float takingplayerDash = 1f;
 
+    public AudioClip startGame;
+    [Range(0f, 1f)]
+    public float takingstartGame = 1f;
+
+    public AudioClip buttonSfx;
+    [Range(0f, 1f)]
+    public float takingbuttonSfx = 1f;
     void Awake()
     {
         if (instance == null)
@@ -83,6 +90,13 @@ public class Audio : MonoBehaviour
     public void OnPlayTakeDame() => OnPlayClip(takeDame, takingDamageVolume);
 
     public void OnPlayerDash() => OnPlayClip(playerDash, takingplayerDash);
+    public void OnButtonClicked() => OnPlayClip(buttonSfx, takingbuttonSfx);
+
+    public AudioClip OnStartGame()
+    {
+        OnPlayClip(startGame, takingstartGame);
+        return startGame;
+    } 
 
     void OnEnable()
     {
@@ -121,9 +135,11 @@ public class Audio : MonoBehaviour
     public void SetSFXVolume(float volume)
     {
         sfxVolume = Mathf.Clamp01(volume);
-        
+
         takingDamageVolume = sfxVolume;
         takingHitVolume = sfxVolume;
         takingplayerDash = sfxVolume;
+        takingstartGame = sfxVolume;
+        takingbuttonSfx = sfxVolume;
     }
 }

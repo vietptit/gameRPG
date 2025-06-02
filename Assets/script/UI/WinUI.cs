@@ -36,4 +36,8 @@ public class WinUI : MonoBehaviour
         Debug.Log("retry");
         SceneManager.LoadScene("SampleScene");
     }
+    public void PlayBtnSound()
+    {
+        Audio.instance.OnButtonClicked();
+    }
 }

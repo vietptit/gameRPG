@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] Button startBtn;
     [SerializeField] Button quitBtn;
+    [SerializeField] Button settingBtn;
     void Start()
     {
         startBtn.onClick.RemoveAllListeners();
@@ -21,6 +22,17 @@ public class MainMenu : MonoBehaviour
         startBtn.interactable = false;
 
         TMP_Text buttonText = startBtn.GetComponentInChildren<TMP_Text>();
+
+        AudioClip clip = Audio.instance.OnStartGame();
+
+        StartCoroutine(WaitForAudioThenAnimateAndLoad(clip, buttonText));
+    }
+    private System.Collections.IEnumerator WaitForAudioThenAnimateAndLoad(AudioClip clip, TMP_Text buttonText)
+    {
+        if (clip != null)
+        {
+            yield return new WaitForSeconds(clip.length); // đợi clip phát xong
+        }
 
         Sequence seq = DOTween.Sequence();
         for (int i = 0; i < 3; i++)
@@ -36,10 +48,16 @@ public class MainMenu : MonoBehaviour
     }
     public void QuitGame()
     {
-        #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-        #else
+        Audio.instance.OnButtonClicked();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
                 Application.Quit();
-        #endif
+#endif
+    }
+    public void OnSettingOpened()
+    {
+        Audio.instance.OnButtonClicked();
     }
 }
