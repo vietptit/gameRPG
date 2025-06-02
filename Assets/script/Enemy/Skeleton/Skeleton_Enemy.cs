@@ -1,9 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using UnityEditor.Callbacks;
-using UnityEngine;
-
 public class Skeleton_Enemy : Enemy
 {
     public IdleState_skeleton idleState{get;private set;}
